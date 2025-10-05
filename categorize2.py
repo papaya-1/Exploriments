@@ -24,4 +24,15 @@ categories = {
 }
 
 def categorize_title(titlebad, cats):
-    title=
+    title = titlebad.lower()
+    matched = []
+    for cate, keywords in cats.item():
+        for key in keywords:
+            if re.search(rf"\b{re.escape(key)}\b", title_lower):
+                matched.append(category)
+                break
+    return matched
+
+tqdm.pandas(dec="Categorizing")
+df["Categories"] = df["Title"].fillna("").progress_apply(lambda x: categorize_title(x, categories))
+print(df.head())
