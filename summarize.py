@@ -36,6 +36,7 @@ def extract_abstract(entire_text):
         #summary = summarizer(text, max_length=300, min_length = 50, do_sample = False)
         #return summary[0]["summary_text"]
 
+<<<<<<< HEAD
 #splits abstract into chunks that hugging face model can process 
 def section_text(text, max_tokens = 512):
     #tokenizing 
@@ -66,6 +67,10 @@ def summarize(text):
         return final_summary
     else:
         return partial_summaries[0]
+=======
+#splits 
+def section_text():
+>>>>>>> 23ef09b (WIP: saving current progress before pulling)
 
 #extract abstract for every paper 
 for i, row in df.iterrows():
