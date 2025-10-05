@@ -8,6 +8,8 @@ from bs4 import BeautifulSoup
 df = pd.read_csv("data/SB_publication_PMC.csv", header=None)
 df.columns = ["Title", "Link"]
 
+print(df["Title"])
+
 categories = {
     "Altered Gravity": "",
     "Radiation": "",
@@ -42,7 +44,7 @@ def categorize(text):
 
 print("check")
 # Add results to dataset
-print(df['Title'].apply(categorize))
+df['Title'].apply(categorize)
 # Save new dataset
 df.to_csv("data/papers_categorized.csv", index=False)
 
