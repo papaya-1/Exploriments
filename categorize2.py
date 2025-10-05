@@ -20,9 +20,9 @@ categories = {
     "Rodents": ['mice', 'mouse', 'murine', 'rat'],
     "Invertebrates": ['invertebrate', 'drosophila', 'nematodes', 'tardigrades', 'toadfish', 'snail', 'squid'],
     "Plants": ['pollen', 'plant', 'root', 'seed', 'arabidopsis', 'populus', 'lettuce', 'mustard', 'veg'],
-    "Microorganism and Viruses": ['microbe', 'microbial', 'bacteria', 'fungi', 'yeast', 'microbiome', 'virus', 'viral', 'biofilm', 'amr', 'microorganism'],
+    "Microorganisms and Viruses": ['microbe', 'microbial', 'bacteria', 'fungi', 'yeast', 'microbiome', 'virus', 'viral', 'biofilm', 'amr', 'microorganism'],
     "Genetics": ['dna', "rna", "chromo", "genetic", "gene", "transcript", "genotype", "genom", "methyl", "telomere"],
-    "Macromolecule Interactions": ["lipid", "protein", "membrane", "binding"]
+    "Macromolecular Interactions": ["lipid", "protein", "membrane", "binding"]
 }
 
 def categorize_title(titlebad, categories):
