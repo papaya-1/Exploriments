@@ -34,8 +34,36 @@ def extract_abstract(entire_text):
         #summary = summarizer(text, max_length=300, min_length = 50, do_sample = False)
         #return summary[0]["summary_text"]
 
-#splits 
-def section_text()
+#splits abstract into chunks that hugging face model can process 
+def section_text(text, max_tokens = 900):
+    #tokenizing 
+    inputs = tokenizer(text, return_tensors="pt", truncation = False)
+    tokens = inputs["input_ids"][0]
+    #list of chunks
+    chunks = []
+    #chunk tokens, convert back to text and add to list
+    for i in range(0, len(tokens), max_tokens):
+        chunk = tokenizer.decode(tokens[i:i+ max_tokens], skip_special_tokens = True)
+        chunks.append(chunk)
+        return chunks
+
+def summarize(text):
+    #split abstract into chunks
+    chunks = section_text(text) 
+    #list of partial summaries
+    partial_summaries = []
+    #summarize each chunk
+    for chunk in chunks:
+        summary = summarizer(chunk, max_length = 200, min_length = 50, do_sample = False)[0]["summary_text"]
+        partial_summaries.append(summary)
+    #combine partial summaries 
+    combined_summary = "".join(partial_summaries)
+    #summarize partial summaires 
+    if len(chunk) > 1:
+        final_summary = summarizer(combined_summary, max_length = 200, min_length = 50, do_sample = False)[0]["summary_text"]
+        return final_summary
+    else:
+        return partial_summaries[0]
 
 #extract abstract for every paper 
 for i, row in df.iterrows():
