@@ -2,7 +2,7 @@ import pandas as pd
 import re
 import tqdm
 
-df = pd.read_csv("SB_Publication_PMC.csv")
+df = pd.read_csv("data/SB_Publication_PMC.csv")
 
 categories = {
     "Altered Gravity": ["gravity", "flight", "weightless", "suspension", "hypergravity"],
@@ -28,8 +28,8 @@ def categorize_title(titlebad, cats):
     matched = []
     for cate, keywords in cats.item():
         for key in keywords:
-            if re.search(rf"\b{re.escape(key)}\b", title_lower):
-                matched.append(category)
+            if re.search(rf"\b{re.escape(key)}\b", title):
+                matched.append(cate)
                 break
     return matched
 
