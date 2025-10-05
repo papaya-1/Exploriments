@@ -2,7 +2,7 @@ import pandas as pd
 import re
 import tqdm
 
-df = pd.read_csv("data/SB_Publication_PMC.csv")
+df = pd.read_csv("data/SB_publication_PMC.csv")
 
 categories = {
     "Altered Gravity": ["gravity", "flight", "weightless", "suspension", "hypergravity"],
@@ -13,26 +13,27 @@ categories = {
     "Musculoskeletal": ['muscle', 'bone', 'osteoclastic', 'osteolysis', 'skeletal', 'atrophy', 'cartilage', 'tendon', 'spine'],
     "Cardiovascular & Vascular": ['cardiovascular', 'cardiac', 'vascular', 'blood', 'artery', 'progenitor'],
     "Neuroscience & Sensory": ['brain', 'neurogenesis', 'retina', 'ocular', 'optic', 'vestibular', 'oligodendrocyte', 'progenitors', 'neuro-inflammation', 'olfactory'],
-    "Immune Response & Infection": ['immune', 'microbe', 'antimicrobial', 'host', 'pathogen', 'viral', 't-cell', 'macrophage', 'neutrophil', 'lymphocyte'],
+    "Immune Response & Infection": ['inflammation', 'killer', 'stem cell', 'immune', 'immunity', 'microbe', 'antimicrobial', 'host', 'pathogen', 'viral', 't-cell', 'macrophage', 'neutrophil', 'lymphocyte'],
     "Metabolism & Cellular Stress": ['oxidative', 'stress', 'redox', 'dysregulation', 'mitochondria', 'leptin signaling', 'aging', 'frailty', 'insulin', 'telomere'],
-    "Reproduction & Sex Differences": ['reproduce', 'reproduct', 'estrous', 'gonadectomy', 'sex', 'gender', 'infants'],
+    "Reproduction & Sex Differences": ['in vitro', 'reproduce', 'reproduct', 'estrous', 'gonadectomy', 'sex', 'gender', 'infants'],
     "Humans": ['human', 'astronauts', 'crew', 'person', 'people'],
     "Rodents": ['mice', 'mouse', 'murine', 'rat'],
     "Invertebrates": ['invertebrate', 'drosophila', 'nematodes', 'tardigrades', 'toadfish', 'snail', 'squid'],
-    "Plants": ['plant', 'stem', 'root', 'seed', 'arabidopsis', 'populus', 'lettuce', 'mustard', 'veg'],
-    "Microorganism and Viruses": ['microbe', 'microbial', 'bacteria', 'fungi', 'yeast', 'microbiome', 'virus', 'viral', 'biofilm', 'amr', 'microorganism']
+    "Plants": ['pollen', 'plant', 'root', 'seed', 'arabidopsis', 'populus', 'lettuce', 'mustard', 'veg'],
+    "Microorganism and Viruses": ['microbe', 'microbial', 'bacteria', 'fungi', 'yeast', 'microbiome', 'virus', 'viral', 'biofilm', 'amr', 'microorganism'],
+    "Genetics": ['dna', "rna", "chromo", "genetic", "gene", "transcript", "genotype", "genom", "methyl", "telomere"],
+    "Macromolecule Interactions": ["lipid", "protein", "membrane", "binding"]
 }
 
-def categorize_title(titlebad, cats):
+def categorize_title(titlebad, categories):
     title = titlebad.lower()
     matched = []
-    for cate, keywords in cats.item():
+    for cate, keywords in categories.items():
         for key in keywords:
-            if re.search(rf"\b{re.escape(key)}\b", title):
+            if key in title:
                 matched.append(cate)
                 break
-    return matched
+    return matched if matched else []
 
-tqdm.pandas(dec="Categorizing")
-df["Categories"] = df["Title"].fillna("").progress_apply(lambda x: categorize_title(x, categories))
-print(df.head())
+df["Categories"] = df["Title"].apply(lambda x: categorize_title(x, categories))
+df.to_csv("SB_publication_categorized.csv", index=False)
