@@ -26,7 +26,7 @@ This repo contains the backend logic for our program with the front-end develope
 ## 🚀 Features
 
 - 🛰️ **Automatic Paper Extraction**  
-  Downloads and extracts text from NASA open-access biology publications (WIP, see file for more info)
+  - Downloads and extracts text from NASA open-access biology publications (WIP, see file for more info)
 
 - 🧠 **AI Summarization & Categorization**  
   - Classifies research papers 
