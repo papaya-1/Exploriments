@@ -1,3 +1,8 @@
+# Use of AI
+   # Used ChatGPT for basic structure and notebook LM to generate keywords
+
+#Code starts here
+
 import pandas as pd
 import re
 import tqdm

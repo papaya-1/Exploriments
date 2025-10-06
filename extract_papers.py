@@ -1,4 +1,14 @@
-#logic for extracting texts. doesn't work because most pages don't have open-access full text and PMC API endpoint only returns metadata. extracted_papers.csv usses manually typed data to make sure summaries.py works
+# Use of AI 
+    # Used ChatGPT to generate code using specific prompts defining necessary features for extract_papers and faster debugging 
+    # Adjusted the code given based on it (ex: choosing AI models, debugging, etc)
+
+# Important note about file!!!!: 
+    # This is the logic for extracting texts
+    # However it doesn't work because most pages don't have open-access full text and PMC API endpoint only returns metadata. 
+    # Extracted_papers.csv uses manually typed data to make sure summaries.py works
+
+#Code starts here
+
 import os
 import re
 import requests

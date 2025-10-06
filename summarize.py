@@ -1,3 +1,9 @@
+# Use of AI
+    # Used ChatGPT to generate code using specific prompts defining necessary features for summarize and for faster debugging
+    # Adjusted the code given based on it (ex: choosing Ai models, debugging, etc)
+
+#Code starts here
+
 #data handling
 import pandas as pd
 #text pattern matching

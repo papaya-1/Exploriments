@@ -1,5 +1,5 @@
-# 🌍 Planet Ptown  
-### *NASA Space Apps Challenge 2025 Submission* (THIS IS A SAMPLE README)  
+# 🌍 Team - Planet Ptown  
+### *NASA Space Apps Challenge 2025 Submission* 
 #### *Exploring Life Science Discoveries Beyond Earth*
 
 ![NASA Badge](https://img.shields.io/badge/NASA%20Space%20Apps-2025-blue?style=for-the-badge&logo=nasa)
@@ -12,36 +12,28 @@
 
 ## 🌌 Overview
 
-**Planet Ptown** is our official submission for the **NASA Space Apps Challenge 2025** —  
-an AI-powered research explorer designed to make NASA’s *Space Biology* research more accessible and understandable.  
+**Exploriments** is our official submission for the **NASA Space Apps Challenge 2025** —  
+an AI-powered research navigator designed to make NASA’s *Space Biology* research more accessible and understandable.  
 
 Our project automatically collects, categorizes, and summarizes scientific papers focused on **environmental factors**, **analogs**, and **platforms** studied in space — including **microgravity**, **radiation**, **ISS**, **Mars**, and **the Moon**.  
 
-It extracts full-text papers, retrieves key images and graphs, uses **Hugging Face AI models** for summarization, and displays everything on a clean, interactive web interface.
+It has the logic for extracting full-text papers, uses **Hugging Face AI models** for summarization, and categorizes articles. 
+
+This repo contains the backend logic for our program with the front-end developed on Figma to show how it will eventually be trasferred over as a website. 
 
 ---
 
 ## 🚀 Features
 
 - 🛰️ **Automatic Paper Extraction**  
-  Downloads and extracts text + images from NASA open-access biology publications.
+  Downloads and extracts text from NASA open-access biology publications (WIP, see file for more info)
 
 - 🧠 **AI Summarization & Categorization**  
-  Uses Hugging Face Transformers to summarize and classify research into:
-  - Altered Gravity  
-  - Radiation  
-  - ISS  
-  - Mars  
-  - Moon  
-
-- 📊 **Graph & Image Retrieval**  
-  Pulls up to 3 figures or graphs from each paper.
+  - Classifies research papers 
+  - Uses Hugging Face Transformers to summarize research
 
 - 💻 **Interactive Web Interface**  
-  Displays categorized summaries with search and filter controls.
-
-- 🌐 **Built in GitHub Codespaces**  
-  Fully cloud-based — no setup required on your computer.
+  - Displays categorized summaries with search and filter controls (on Figma)
 
 ---
 
@@ -50,18 +42,9 @@ It extracts full-text papers, retrieves key images and graphs, uses **Hugging Fa
 | Layer | Technology | Purpose |
 |--------|-------------|----------|
 | **Backend** | Python (Requests, BeautifulSoup, PDFPlumber, Pandas) | Extracts text and images |
-| **AI Models** | Hugging Face Transformers + KeyBERT | Summarization & Keyword Extraction |
-| **Frontend** | HTML, CSS, JavaScript | Displays summaries and adds interactivity |
+| **AI Models** | Hugging Face Transformers, Notebook LM | Summarization, Keyword Identification |
+| **Frontend** | Figma | Displays summaries and adds interactivity |
 | **Design** | Figma | UI/UX layout and visual design |
 | **Environment** | GitHub Codespaces | Development & collaboration |
 | **Hosting** | GitHub Pages | Public web access |
 
----
-
-## 🧠 How It Works
-
-### 1️⃣ Extract Papers  
-Pulls the list of scientific papers and gathers text + images.
-
-```bash
-python extract_papers.py
