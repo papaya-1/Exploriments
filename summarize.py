@@ -35,10 +35,9 @@ def extract_abstract(entire_text):
    match = re.search(r"(?i)abstract[:\s]*(.*?)(?=(introduction)[:\s])", text)
    if match:
        #returns solely the abstract
-       return match.group(1).strip()
+       return match.group(2).strip()
    else:
-       #if the section can't be found, takes the first 300 words since that is the typical length of an abstract
-       return text[:300];
+        return " ".join(text.split()[:300])
 
 
 #Old code - doesn't work because hugging face can't process over a certain token limit so abstract gets cut off and the whole thing isn't processed properlu
