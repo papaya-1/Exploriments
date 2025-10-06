@@ -4,7 +4,8 @@
 
 # Important note about file!!!!: 
     # This is the logic for extracting texts
-    # However it doesn't work because most pages don't have open-access full text and PMC API endpoint only returns metadata. 
+    # WIP due to being unable to access full text and PMC API endpoint only returns metadata.
+    # Point of development for the future   
     # Extracted_papers.csv uses manually typed data to make sure summaries.py works
 
 #Code starts here
