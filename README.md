@@ -15,7 +15,7 @@
 **Exploriments** is our official submission for the **NASA Space Apps Challenge 2025** —  
 an AI-powered research navigator designed to make NASA’s *Space Biology* research more accessible and understandable.  
 
-Our project automatically collects, categorizes, and summarizes scientific papers focused on **environmental factors**, **analogs**, and **platforms** studied in space — including **microgravity**, **radiation**, **ISS**, **Mars**, and **the Moon**.  
+Our project automatically collects, categorizes, and summarizes scientific papers focused on **environmental factors**, **biological systems**, **living systems**, etc studied in space, into categories such as **microgravity**, **neuroscience**, **immune response**, **metabolism**, and **microrganisms**.  
 
 It has the logic for extracting full-text papers, uses **Hugging Face AI models** for summarization, and categorizes articles. 
 
