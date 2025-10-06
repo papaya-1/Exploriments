@@ -42,7 +42,7 @@ This repo contains the backend logic for our program with the front-end develope
 | Layer | Technology | Purpose |
 |--------|-------------|----------|
 | **Backend** | Python (Requests, BeautifulSoup, PDFPlumber, Pandas) | Extracts text and images |
-| **AI Models** | Hugging Face Transformers, Notebook LM | Summarization, Keyword Identification |
+| **AI Models** | Hugging Face Transformers | Summarization |
 | **Frontend** | Figma | Displays summaries and adds interactivity |
 | **Design** | Figma | UI/UX layout and visual design |
 | **Environment** | GitHub Codespaces | Development & collaboration |
