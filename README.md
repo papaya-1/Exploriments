@@ -1,4 +1,4 @@
-# 🌍 Team - Planet Ptown  
+# 🌍 Exploriments by Planet Ptown  
 ### *NASA Space Apps Challenge 2025 Submission* 
 #### *Exploring Life Science Discoveries Beyond Earth*
 
