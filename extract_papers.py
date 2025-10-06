@@ -1,4 +1,4 @@
-#logic for extracting texts. doesn't work because most pages aren't full text and PMC only returns metadata
+#logic for extracting texts. doesn't work because most pages don't have open-access full text and PMC API endpoint only returns metadata. extracted_papers.csv usses manually typed data to make sure summaries.py works
 import os
 import re
 import requests
